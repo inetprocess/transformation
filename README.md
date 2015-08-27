@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/inetprocess/transformation.svg?branch=master)](https://travis-ci.org/inetprocess/transformation)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/inetprocess/transformation/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/inetprocess/transformation/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/inetprocess/transformation/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/inetprocess/transformation/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/inetprocess/transformation/badges/build.png?b=master)](https://scrutinizer-ci.com/g/inetprocess/transformation/build-status/master)
 
 # inetprocess/transformation

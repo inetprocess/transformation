@@ -48,7 +48,6 @@ class Transform
 
     /**
      * Doesn't allow the class to be instanciated
-     * @return  void
      */
     protected function __construct()
     {
@@ -62,7 +61,7 @@ class Transform
     protected static function getFactory()
     {
         if (!static::$transform instanceof Transform) {
-            static::$transform = new self();
+            static::$transform = new static();
         }
 
         return static::$transform;

@@ -54,8 +54,9 @@ class RuleTimezoneTest extends \PHPUnit_Framework_TestCase
 
     public function testTimezoneRightParameters()
     {
-        $output = T::Timezone('Y-m-d H:i:s', 'Pacific/Nauru')->transform('2014-12-31 15:00:00');
-        $this->assertEquals($output, '2015-01-01 02:00:00');
+        $dateStr = '2014-12-31 15:00:00';
+        $output = T::Timezone('Y-m-d H:i:s', date_default_timezone_get())->transform($dateStr);
+        $this->assertEquals($output, $dateStr);
     }
 
     public function testTimezoneRightParametersWithOriginTimeZone()

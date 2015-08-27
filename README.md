@@ -72,7 +72,6 @@ Uses [Cocur\Slugify](https://github.com/cocur/slugify) to Slugify a string.
 require_once __DIR__ . '/vendor/autoload.php';
 use Inet\Transformation\Transform as T;
 
-$str = 'abababababab';
 $output = T::Slugify()->transform('Bonjour tôôut le monde !');
 // Displays: bonjour-toout-le-monde
 echo $output;

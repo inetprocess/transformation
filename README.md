@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/inetprocess/transformation.svg?branch=master)](https://travis-ci.org/inetprocess/transformation)
+
 # inetprocess/transformation
 Inspired by [Respect/Validation](https://github.com/Respect/Validation), that library transforms an input string (or float / int / bool) to an output string, after applying rules.
 

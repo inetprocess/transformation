@@ -17,13 +17,13 @@ use Inet\Transformation\Exception\InvalidRuleException;
 use Inet\Transformation\Exception\NotTransformableException;
 
 /**
+ * Main class that calls statically any Rule
+ *
  * @method static Transform Date(string $inputFormat, string $outputFormat)
  * @method static Transform Replace(string $search, string $replace)
  * @method static Transform ReplaceRegexp(string $pattern, string $replacement)
  * @method static Transform Slugify()
  * @method static Transform Timezone(string $inputFormat, string $targetTimezone, [string $currentTimezone])
- *
- * Main class that calls statically any Rule
  */
 class Transform
 {

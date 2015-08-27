@@ -20,6 +20,13 @@ use Inet\Transformation\Exception\TransformationException;
  */
 class Timezone extends AbstractRule
 {
+    /**
+     * Operate the transformation
+     * @param     string    $input
+     * @param     array     $arguments
+     * @throws    Inet\Transformation\Exception\TransformationException
+     * @return    string
+     */
     public function transform($input, $arguments)
     {
         // I should have two arguments: old format / new format

@@ -18,5 +18,9 @@ namespace Inet\Transformation\Exception;
  */
 class NotTransformableException extends \RuntimeException
 {
+    /**
+     * Set a default message
+     * @var    string
+     */
     protected $message = 'Only strings, int, float and bool are transformable';
 }

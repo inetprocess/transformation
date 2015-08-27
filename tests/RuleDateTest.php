@@ -43,6 +43,16 @@ class RuleDateTest extends \PHPUnit_Framework_TestCase
         T::Date('Y-m-d', 'd-m-Y')->transform('foo');
     }
 
+    /**
+     * @expectedException Inet\Transformation\Exception\TransformationException
+     * @expectedExceptionMessageRegExp |Output format seems not valid. Returned date is empty|
+     */
+    public function testDateWrongFormat()
+    {
+        $output = T::Date('Y-m-d', null)->transform('2015-01-01');
+        $this->assertEquals($output, '01-01-2015');
+    }
+
 
     public function testDateRightParameters()
     {

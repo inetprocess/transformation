@@ -18,5 +18,12 @@ namespace Inet\Transformation\Rule;
  */
 abstract class AbstractRule
 {
+    /**
+     * Operate the transformation
+     * @param     string    $input
+     * @param     array     $arguments
+     * @throws    Inet\Transformation\Exception\TransformationException
+     * @return    string
+     */
     abstract public function transform($input, $arguments);
 }

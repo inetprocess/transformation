@@ -18,5 +18,9 @@ namespace Inet\Transformation\Exception;
  */
 class TransformationException extends \RuntimeException
 {
+    /**
+     * Set a default message
+     * @var    string
+     */
     protected $message = 'RuntimeException during the transformation';
 }

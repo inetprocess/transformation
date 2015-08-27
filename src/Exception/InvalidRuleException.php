@@ -18,5 +18,9 @@ namespace Inet\Transformation\Exception;
  */
 class InvalidRuleException extends \RuntimeException
 {
+    /**
+     * Set a default message
+     * @var    string
+     */
     protected $message = 'That Transformation rule does not exist';
 }

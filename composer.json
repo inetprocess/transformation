@@ -1,0 +1,30 @@
+{
+    "name": "inetprocess/transformation",
+    "description": "This library is a wrapper to transforms a string to another string (date format to another format, strings, regexp....",
+    "type": "library",
+    "keywords": ["transformation"],
+    "authors": [
+        {
+            "name": "Emmanuel Dyan",
+            "email": "emmanuel.dyan@inetprocess.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.3",
+        "cocur/slugify": "^1.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Inet\\Transformation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Inet\\Transformation\\Tests\\": "tests/"
+        }
+    }
+}

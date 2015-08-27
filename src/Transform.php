@@ -29,7 +29,7 @@ class Transform
 {
     /**
      * Contains the factory
-     * @var    Inet\Transformation\Transform
+     * @var    Transform
      */
     protected static $transform;
 

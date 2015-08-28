@@ -23,6 +23,10 @@ use Inet\Transformation\Exception\TransformationException;
  */
 class ReplaceRegexp extends AbstractRule
 {
+    /**
+     * PHP Constants that says what's happened with the PregRegexp
+     * @var    array
+     */
     protected $pregErrs = array(
         \PREG_INTERNAL_ERROR        => 'Internal Error',
         \PREG_BACKTRACK_LIMIT_ERROR => 'Backtrack limit',

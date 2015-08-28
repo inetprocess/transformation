@@ -56,6 +56,9 @@ class Transform
      */
     protected function __construct()
     {
+        $whoops = new \Whoops\Run;
+        $whoops->pushHandler(new \Whoops\Handler\PlainTextHandler);
+        $whoops->register();
     }
 
     /**

@@ -40,10 +40,11 @@ class ReplaceRegexp extends AbstractRule
             throw new TransformationException('Rule ReplaceRegexp Expects exactly 2 arguments');
         }
 
-        $output = @preg_replace($arguments[0], $arguments[1], $input);
         // Validate the regexp was OK
-        if (is_null($output)) {
-            $msg = 'ReplaceRegexp was not able to transform your string. Check your expressions';
+        try {
+            $output = preg_replace($arguments[0], $arguments[1], $input);
+        } catch (\Exception $e) {
+            $msg = 'ReplaceRegexp was not able to transform your string: ' . $e->getMessage();
             throw new TransformationException($msg);
         }
 

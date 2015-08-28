@@ -23,6 +23,14 @@ use Inet\Transformation\Exception\TransformationException;
  */
 class ReplaceRegexp extends AbstractRule
 {
+    protected $pregErrs = array(
+        \PREG_INTERNAL_ERROR        => 'Internal Error',
+        \PREG_BACKTRACK_LIMIT_ERROR => 'Backtrack limit',
+        \PREG_RECURSION_LIMIT_ERROR => 'Recursion limit',
+        \PREG_BAD_UTF8_ERROR        => 'Bad UTF-8',
+        \PREG_BAD_UTF8_OFFSET_ERROR => 'Bad UTF-8 Offset'
+    );
+
     /**
      * Operate the transformation
      *
@@ -40,11 +48,12 @@ class ReplaceRegexp extends AbstractRule
             throw new TransformationException('Rule ReplaceRegexp Expects exactly 2 arguments');
         }
 
-        // Validate the regexp was OK
-        try {
-            $output = preg_replace($arguments[0], $arguments[1], $input);
-        } catch (\Exception $e) {
-            $msg = 'ReplaceRegexp was not able to transform your string: ' . $e->getMessage();
+        // Validate That the regexp was OK
+        $output = @preg_replace($arguments[0], $arguments[1], $input);
+        if (is_null($output)) {
+            $pregErr = preg_last_error();
+            $pregMsg = array_key_exists($pregErr, $this->pregErrs) ? $this->pregErrs[$pregErr] :'Unknown error';
+            $msg = 'ReplaceRegexp was not able to transform your string: ' . $pregMsg;
             throw new TransformationException($msg);
         }
 

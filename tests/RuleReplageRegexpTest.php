@@ -34,7 +34,7 @@ class RuleReplageRegexpTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException Inet\Transformation\Exception\TransformationException
-     * @expectedExceptionMessageRegExp |ReplaceRegexp was not able to transform your string: preg_replace\(\): No ending delimiter '/' found|
+     * @expectedExceptionMessageRegExp |ReplaceRegexp was not able to transform your string: .*|
      */
     public function testReplaceRegexpWrongRegexp()
     {

@@ -13,8 +13,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.3",
-        "cocur/slugify": "^1.2",
-        "filp/whoops": "^1.1"
+        "cocur/slugify": "^1.2"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"

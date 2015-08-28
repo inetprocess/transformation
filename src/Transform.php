@@ -44,21 +44,13 @@ class Transform
      */
     protected $currentRules = array();
 
-    /**
-     * Cache of rules
-     *
-     * @var array
-     */
-    protected static $rules = array();
 
     /**
      * Doesn't allow the class to be instanciated
      */
     protected function __construct()
     {
-        $whoops = new \Whoops\Run;
-        $whoops->pushHandler(new \Whoops\Handler\PlainTextHandler());
-        $whoops->register();
+
     }
 
     /**
@@ -157,6 +149,7 @@ class Transform
      */
     public function transform($input)
     {
+
         $validTypes = array('boolean', 'integer', 'double', 'string');
         $inputType = gettype($input);
         if (!in_array($inputType, $validTypes)) {
@@ -169,12 +162,9 @@ class Transform
             $rule = $ruleArgs['rule'];
             $args = $ruleArgs['arguments'];
 
-            // All instances are cached to avoid creating new one for each call
-            if (!array_key_exists($rule, self::$rules)) {
-                self::$rules[$rule] = new $rule;
-            }
+            $rule = new $rule;
             // More readable variable
-            $input = self::$rules[$rule]->transform($input, $args);
+            $input = $rule->transform($input, $args);
         }
 
         return $input;

@@ -41,7 +41,6 @@ class ReplaceRegexp extends AbstractRule
         }
 
         $output = @preg_replace($arguments[0], $arguments[1], $input);
-
         // Validate the regexp was OK
         if (is_null($output)) {
             $msg = 'ReplaceRegexp was not able to transform your string. Check your expressions';

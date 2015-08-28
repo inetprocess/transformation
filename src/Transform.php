@@ -57,14 +57,16 @@ class Transform
     protected function __construct()
     {
         $whoops = new \Whoops\Run;
-        $whoops->pushHandler(new \Whoops\Handler\PlainTextHandler);
+        $whoops->pushHandler(function () {
+            new \Whoops\Handler\PlainTextHandler;
+        });
         $whoops->register();
     }
 
     /**
      * Returns the factory to avoid having multiple instances of the same class
      *
-     * @return Factory
+     * @return Transform
      */
     protected static function getFactory()
     {
@@ -139,7 +141,7 @@ class Transform
      * @param string $ruleName  Name of the rule
      * @param array  $arguments Arguments for the rule
      *
-     * @return void
+     * @return Transform
      */
     public function __call($ruleName, $arguments)
     {

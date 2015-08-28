@@ -163,7 +163,6 @@ class Transform
             $args = $ruleArgs['arguments'];
 
             $rule = new $rule;
-            // More readable variable
             $input = $rule->transform($input, $args);
         }
 

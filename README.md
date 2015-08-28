@@ -2,6 +2,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/inetprocess/transformation/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/inetprocess/transformation/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/inetprocess/transformation/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/inetprocess/transformation/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/inetprocess/transformation/badges/build.png?b=master)](https://scrutinizer-ci.com/g/inetprocess/transformation/build-status/master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/c04e15ab-fff2-4aad-9c8e-7d3d4eba7a04/mini.png)](https://insight.sensiolabs.com/projects/c04e15ab-fff2-4aad-9c8e-7d3d4eba7a04)
 
 # inetprocess/transformation
 Inspired by [Respect/Validation](https://github.com/Respect/Validation), that library transforms an input string (or float / int / bool) to an output string, after applying rules.

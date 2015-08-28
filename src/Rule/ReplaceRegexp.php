@@ -25,7 +25,8 @@ class ReplaceRegexp extends AbstractRule
 {
     /**
      * PHP Constants that says what's happened with the PregRegexp
-     * @var    array
+     *
+     * @var array
      */
     protected $pregErrs = array(
         \PREG_INTERNAL_ERROR        => 'Internal Error',

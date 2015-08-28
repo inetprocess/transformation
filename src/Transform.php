@@ -44,13 +44,11 @@ class Transform
      */
     protected $currentRules = array();
 
-
     /**
      * Doesn't allow the class to be instanciated
      */
     protected function __construct()
     {
-
     }
 
     /**
@@ -149,7 +147,6 @@ class Transform
      */
     public function transform($input)
     {
-
         $validTypes = array('boolean', 'integer', 'double', 'string');
         $inputType = gettype($input);
         if (!in_array($inputType, $validTypes)) {

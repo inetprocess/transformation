@@ -18,6 +18,9 @@
     "require-dev": {
         "phpunit/phpunit": "~4.0"
     },
+    "suggest": {
+        "fabpot/php-cs-fixer": "Fix PSR2 and other coding style issues"
+    },
     "autoload": {
         "psr-4": {
             "Inet\\Transformation\\": "src/"

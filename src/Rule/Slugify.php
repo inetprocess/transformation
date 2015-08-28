@@ -6,8 +6,11 @@
  *
  * @author Emmanuel Dyan
  * @copyright 2005-2015 iNet Process
+ *
  * @package inetprocess/transformation
+ *
  * @license GNU General Public License v2.0
+ *
  * @link http://www.inetprocess.com
  */
 
@@ -23,16 +26,19 @@ class Slugify extends AbstractRule
 {
     /**
      * Operate the transformation
-     * @param     string    $input
-     * @param     array     $arguments
-     * @throws    Inet\Transformation\Exception\TransformationException
-     * @return    string
+     *
+     * @param string $input
+     * @param array  $arguments
+     *
+     * @throws Inet\Transformation\Exception\TransformationException
+     *
+     * @return string
      */
     public function transform($input, $arguments)
     {
         // I should have two arguments: old format / new format
         if (count($arguments) !== 0) {
-            throw new TransformationException("Rule Slugify Expects no parameter");
+            throw new TransformationException('Rule Slugify Expects no parameter');
         }
 
         try {

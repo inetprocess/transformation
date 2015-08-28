@@ -29,11 +29,9 @@ class RuleSlugifyTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($output, 'bonjour-toout-le-monde');
     }
 
-
     public function testSlugifyRightParametersDoubleTransformation()
     {
         $output = T::Slugify()->Replace('o', 'a')->transform('Bonjour tôôut le monde !');
         $this->assertEquals($output, str_replace('o', 'a', 'bonjour-toout-le-monde'));
     }
-
 }

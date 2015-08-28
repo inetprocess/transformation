@@ -14,7 +14,6 @@ class RuleTimezoneTest extends \PHPUnit_Framework_TestCase
         T::Timezone()->transform('2015-01-01');
     }
 
-
     /**
      * @expectedException Inet\Transformation\Exception\TransformationException
      * @expectedExceptionMessageRegExp |Rule Timezone Expects 2 or 3 arguments|
@@ -23,7 +22,6 @@ class RuleTimezoneTest extends \PHPUnit_Framework_TestCase
     {
         T::Timezone('Y-m-d')->transform('2015-01-01');
     }
-
 
     /**
      * @expectedException Inet\Transformation\Exception\NotTransformableException
@@ -65,7 +63,6 @@ class RuleTimezoneTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($output, '2015-01-01 02:00:00');
     }
 
-
     public function testTimezoneRightParametersDoubleTransformation()
     {
         $date = '2014-12-31 15:00:00';
@@ -75,5 +72,4 @@ class RuleTimezoneTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($output, $date);
     }
-
 }

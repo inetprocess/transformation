@@ -3,7 +3,7 @@ namespace Inet\Transformation\Tests;
 
 use Inet\Transformation\Transform as T;
 
-class RuleReplaceRegexpTest extends \PHPUnit_Framework_TestCase
+class RuleReplageRegexpTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @expectedException Inet\Transformation\Exception\TransformationException
@@ -14,7 +14,6 @@ class RuleReplaceRegexpTest extends \PHPUnit_Framework_TestCase
         T::ReplaceRegexp()->transform('abababababab');
     }
 
-
     /**
      * @expectedException Inet\Transformation\Exception\TransformationException
      * @expectedExceptionMessageRegExp |Rule ReplaceRegexp Expects exactly 2 arguments|
@@ -23,7 +22,6 @@ class RuleReplaceRegexpTest extends \PHPUnit_Framework_TestCase
     {
         T::ReplaceRegexp('/a/i')->transform('abababababab');
     }
-
 
     /**
      * @expectedException Inet\Transformation\Exception\NotTransformableException
@@ -34,7 +32,6 @@ class RuleReplaceRegexpTest extends \PHPUnit_Framework_TestCase
         T::ReplaceRegexp('/a/i', 'b')->transform(null);
     }
 
-
     /**
      * @expectedException Inet\Transformation\Exception\TransformationException
      * @expectedExceptionMessageRegExp |ReplaceRegexp was not able to transform your string. Check your expressions|
@@ -44,13 +41,11 @@ class RuleReplaceRegexpTest extends \PHPUnit_Framework_TestCase
         T::ReplaceRegexp('/ai', 'b')->transform('abababababa');
     }
 
-
     public function testReplaceRegexpRightParameters()
     {
         $output = T::ReplaceRegexp('/a/', 'b')->transform('abababababab');
         $this->assertEquals($output, preg_replace('/a/', 'b', 'abababababab'));
     }
-
 
     public function testReplaceRegexpRightParametersDoubleTransformation()
     {

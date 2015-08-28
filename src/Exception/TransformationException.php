@@ -6,8 +6,11 @@
  *
  * @author Emmanuel Dyan
  * @copyright 2005-2015 iNet Process
+ *
  * @package inetprocess/transformation
+ *
  * @license GNU General Public License v2.0
+ *
  * @link http://www.inetprocess.com
  */
 
@@ -20,7 +23,8 @@ class TransformationException extends \RuntimeException
 {
     /**
      * Set a default message
-     * @var    string
+     *
+     * @var string
      */
     protected $message = 'RuntimeException during the transformation';
 }

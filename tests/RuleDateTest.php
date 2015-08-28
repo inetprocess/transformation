@@ -14,7 +14,6 @@ class RuleDateTest extends \PHPUnit_Framework_TestCase
         T::Date()->transform('2015-01-01');
     }
 
-
     /**
      * @expectedException Inet\Transformation\Exception\TransformationException
      * @expectedExceptionMessageRegExp |Rule Date Expects exactly 2 arguments|
@@ -23,7 +22,6 @@ class RuleDateTest extends \PHPUnit_Framework_TestCase
     {
         T::Date('Y-m-d')->transform('2015-01-01');
     }
-
 
     /**
      * @expectedException Inet\Transformation\Exception\NotTransformableException
@@ -53,13 +51,11 @@ class RuleDateTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($output, '01-01-2015');
     }
 
-
     public function testDateRightParameters()
     {
         $output = T::Date('Y-m-d', 'd-m-Y')->transform('2015-01-01');
         $this->assertEquals($output, '01-01-2015');
     }
-
 
     public function testDateRightParametersDoubleTransformation()
     {
@@ -67,5 +63,4 @@ class RuleDateTest extends \PHPUnit_Framework_TestCase
         $output = T::Date('Y-m-d', 'd-m-Y')->Date('d-m-Y', 'Y-m-d')->transform($date);
         $this->assertEquals($output, $date);
     }
-
 }

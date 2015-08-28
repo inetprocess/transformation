@@ -6,8 +6,11 @@
  *
  * @author Emmanuel Dyan
  * @copyright 2005-2015 iNet Process
+ *
  * @package inetprocess/transformation
+ *
  * @license GNU General Public License v2.0
+ *
  * @link http://www.inetprocess.com
  */
 
@@ -29,33 +32,35 @@ class Transform
 {
     /**
      * Contains the factory
-     * @var    Transform
+     *
+     * @var Transform
      */
     protected static $transform;
 
     /**
      * List of rules to execute on an input
-     * @var    array
+     *
+     * @var array
      */
     protected $currentRules = array();
 
     /**
      * Cache of rules
-     * @var    array
+     *
+     * @var array
      */
     protected static $rules = array();
-
 
     /**
      * Doesn't allow the class to be instanciated
      */
     protected function __construct()
     {
-
     }
 
     /**
      * Returns the factory to avoid having multiple instances of the same class
+     *
      * @return Factory
      */
     protected static function getFactory()
@@ -69,7 +74,8 @@ class Transform
 
     /**
      * Return an Array of rules for an instance
-     * @return    array
+     *
+     * @return array
      */
     protected function getRules()
     {
@@ -78,7 +84,8 @@ class Transform
 
     /**
      * Called on the first time to remove all old rules
-     * @return    void
+     *
+     * @return void
      */
     protected function cleanRules()
     {
@@ -87,10 +94,11 @@ class Transform
 
     /**
      * Add a rule to the rules registry
+     *
      * @param string $ruleName
      * @param array  $arguments
      *
-     * @return    void
+     * @return void
      */
     protected function addRule($ruleName, $arguments)
     {
@@ -124,9 +132,11 @@ class Transform
 
     /**
      * Just add a rule in the registry when called
-     * @param     string    $ruleName     Name of the rule
-     * @param     array     $arguments    Arguments for the rule
-     * @return    void
+     *
+     * @param string $ruleName  Name of the rule
+     * @param array  $arguments Arguments for the rule
+     *
+     * @return void
      */
     public function __call($ruleName, $arguments)
     {
@@ -137,12 +147,13 @@ class Transform
 
     /**
      * Transform an input by applying rule
-     * @param     string    $input    Should be a string !
-     * @return    string              Transformed string
+     *
+     * @param string $input Should be a string !
+     *
+     * @return string Transformed string
      */
     public function transform($input)
     {
-
         $validTypes = array('boolean', 'integer', 'double', 'string');
         $inputType = gettype($input);
         if (!in_array($inputType, $validTypes)) {

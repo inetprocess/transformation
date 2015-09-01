@@ -22,6 +22,7 @@ use Inet\Transformation\Exception\NotTransformableException;
 /**
  * Main class that calls statically any Rule
  *
+ * # CallBack: Be careful that the value to transform is set as the latest parameter
  * @method static Transform Callback(callable $callable, ...)
  * @method static Transform Date(string $inputFormat, string $outputFormat)
  * @method static Transform Implode(string $glue)

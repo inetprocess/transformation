@@ -25,7 +25,7 @@ class RuleReplageRegexpTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException Inet\Transformation\Exception\NotTransformableException
-     * @expectedExceptionMessageRegExp |Only strings, int, float and bool are transformable|
+     * @expectedExceptionMessageRegExp |Only strings, int, float, bool and array are transformable|
      */
     public function testReplaceRegexpTwoParametersReplaceRegexpNull()
     {
@@ -38,7 +38,7 @@ class RuleReplageRegexpTest extends \PHPUnit_Framework_TestCase
      */
     public function testReplaceRegexpWrongRegexp()
     {
-        T::ReplaceRegexp('/ai', 'b')->transform('abababababa');
+        @T::ReplaceRegexp('/ai', 'b')->transform('abababababa');
     }
 
     public function testReplaceRegexpRightParameters()

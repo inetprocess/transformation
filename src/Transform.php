@@ -22,7 +22,10 @@ use Inet\Transformation\Exception\NotTransformableException;
 /**
  * Main class that calls statically any Rule
  *
+ * @method static Transform Callback(callable $callable, ...)
  * @method static Transform Date(string $inputFormat, string $outputFormat)
+ * @method static Transform Implode(string $glue)
+ * @method static Transform Explode(string $delimiter)
  * @method static Transform Replace(string $search, string $replace)
  * @method static Transform ReplaceRegexp(string $pattern, string $replacement)
  * @method static Transform Slugify()
@@ -147,7 +150,7 @@ class Transform
      */
     public function transform($input)
     {
-        $validTypes = array('boolean', 'integer', 'double', 'string');
+        $validTypes = array('boolean', 'integer', 'double', 'string', 'array');
         $inputType = gettype($input);
         if (!in_array($inputType, $validTypes)) {
             throw new NotTransformableException;

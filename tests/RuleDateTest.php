@@ -25,7 +25,7 @@ class RuleDateTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException Inet\Transformation\Exception\NotTransformableException
-     * @expectedExceptionMessageRegExp |Only strings, int, float and bool are transformable|
+     * @expectedExceptionMessageRegExp |Only strings, int, float, bool and array are transformable|
      */
     public function testDateTwoParametersDateNull()
     {

@@ -26,5 +26,5 @@ class NotTransformableException extends \RuntimeException
      *
      * @var string
      */
-    protected $message = 'Only strings, int, float and bool are transformable';
+    protected $message = 'Only strings, int, float, bool and array are transformable';
 }

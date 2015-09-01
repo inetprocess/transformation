@@ -54,10 +54,10 @@ class ReplaceRegexp extends AbstractRule
         }
 
         // Validate That the regexp was OK
-        $output = @preg_replace($arguments[0], $arguments[1], $input);
+        $output = preg_replace($arguments[0], $arguments[1], $input);
         if (is_null($output)) {
             $pregErr = preg_last_error();
-            $pregMsg = array_key_exists($pregErr, $this->pregErrs) ? $this->pregErrs[$pregErr] :'Unknown error';
+            $pregMsg = array_key_exists($pregErr, $this->pregErrs) ? $this->pregErrs[$pregErr] : 'Unknown error';
             $msg = 'ReplaceRegexp was not able to transform your string: ' . $pregMsg;
             throw new TransformationException($msg);
         }

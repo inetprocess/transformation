@@ -19,7 +19,7 @@ namespace Inet\Transformation\Rule;
 use Inet\Transformation\Exception\TransformationException;
 
 /**
- * Explode a string (useful after a callback)
+ * Explode a string to an array (useful after a callback)
  */
 class Explode extends AbstractRule
 {
@@ -31,7 +31,7 @@ class Explode extends AbstractRule
      *
      * @throws Inet\Transformation\Exception\TransformationException
      *
-     * @return string
+     * @return array
      */
     public function transform($input, $arguments)
     {

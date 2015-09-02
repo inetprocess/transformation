@@ -104,6 +104,10 @@ class Transform
             throw new InvalidRuleException("The rule '$ruleName' does not exist");
         }
 
+        if (get_parent_class($ruleClass) !== 'Inet\Transformation\Rule\AbstractRule') {
+            throw new InvalidRuleException("The rule '$ruleName' must implement AbstractRule");
+        }
+
         $this->currentRules[] = array(
             'rule' => $ruleClass,
             'arguments' => $arguments,

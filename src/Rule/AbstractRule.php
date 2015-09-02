@@ -29,7 +29,7 @@ abstract class AbstractRule
      *
      * @throws Inet\Transformation\Exception\TransformationException
      *
-     * @return string
+     * @return string|array
      */
     abstract public function transform($input, $arguments);
 }

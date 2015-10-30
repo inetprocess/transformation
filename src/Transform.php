@@ -27,6 +27,7 @@ use Inet\Transformation\Exception\NotTransformableException;
  * @method static Transform Date(string $inputFormat, string $outputFormat)
  * @method static Transform Implode(string $glue)
  * @method static Transform Explode(string $delimiter)
+ * @method static Transform NormalizeURL(string $protocol)
  * @method static Transform Replace(string $search, string $replace)
  * @method static Transform ReplaceRegexp(string $pattern, string $replacement)
  * @method static Transform Slugify()

@@ -24,6 +24,7 @@ use Inet\Transformation\Exception\NotTransformableException;
  *
  * # CallBack: Be careful that the value to transform is set as the latest parameter
  * @method static Transform Callback(callable $callable, ...)
+ * @method static Transform Concat(string $before, [string $after])
  * @method static Transform Date(string $inputFormat, string $outputFormat)
  * @method static Transform Implode(string $glue)
  * @method static Transform Explode(string $delimiter)

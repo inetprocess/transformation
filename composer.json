@@ -30,5 +30,10 @@
         "psr-4": {
             "Inet\\Transformation\\Tests\\": "tests/"
         }
+    },
+    "config": {
+        "platform": {
+            "php": "5.3.29"
+        }
     }
 }

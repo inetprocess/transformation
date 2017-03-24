@@ -83,13 +83,13 @@ T::Map($mapping)->transform(array('10', '1')); // array('key10', 'key1')
 T::Map($mapping)->transform('unknown key'); // unknown key
 ```
 
-## NormalizeUrl(string $protocol)
+## NormalizeURL(string $protocol)
 Prepend a default protocol if not present to any url.
 ```php
-T::NormalizeUrl('http')->transform('https://www.google.com'); // https://www.google.com
-T::NormalizeUrl('http')->transform('www.google.com'); // http://www.google.com
-T::NormalizeUrl('http')->transform('ssh://github.com'); // ssh://github.com
-T::NormalizeUrl('ssh')->transform('github.com'); // ssh://github.com
+T::NormalizeURL('http')->transform('https://www.google.com'); // https://www.google.com
+T::NormalizeURL('http')->transform('www.google.com'); // http://www.google.com
+T::NormalizeURL('http')->transform('ssh://github.com'); // ssh://github.com
+T::NormalizeURL('ssh')->transform('github.com'); // ssh://github.com
 ```
 
 ## Replace(string $search, string $replace)

@@ -43,7 +43,7 @@ class Implode extends AbstractRule
 
         if (!is_array($input)) {
             throw new NotTransformableException('Rule Implode can transform an array. '
-                . gettype($input) . ' found in input');
+                . gettype($input).' found in input');
         }
 
         // Transform it

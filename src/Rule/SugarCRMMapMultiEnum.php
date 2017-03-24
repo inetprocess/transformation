@@ -36,7 +36,7 @@ class SugarCRMMapMultiEnum extends AbstractRule
     public function transform($input, $arguments)
     {
         // I should have two arguments: old format / new format
-        if (count($arguments) !== 1 and count($arguments) !== 2) {
+        if (count($arguments) !== 1 && count($arguments) !== 2) {
             throw new TransformationException(
                 'Rule SugarCRMMapMultiEnum expects 1 or 2 argument: mapping, options'
             );
@@ -99,7 +99,7 @@ class SugarCRMMapMultiEnum extends AbstractRule
             $string = preg_replace('/^(\^\^,\^)|(\^,\^\^)$/', '^', $string);
 
             // Get the inner part of the string without leading|trailing ^ chars
-            $string = substr(substr($string, 1), 0, strlen($string) -2);
+            $string = substr(substr($string, 1), 0, strlen($string) - 2);
         }
 
         return explode('^,^', $string);
@@ -111,7 +111,7 @@ class SugarCRMMapMultiEnum extends AbstractRule
             return "";
         }
 
-        $string = "^" . implode('^,^', $arr) . "^";
+        $string = "^".implode('^,^', $arr)."^";
 
         return $string;
     }

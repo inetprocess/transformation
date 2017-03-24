@@ -42,6 +42,6 @@ class Concat extends AbstractRule
         $before = $arguments[0];
         $after = (array_key_exists(1, $arguments) ? $arguments[1] : '');
 
-        return $before . $input . $after;
+        return $before.$input.$after;
     }
 }

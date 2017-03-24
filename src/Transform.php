@@ -101,7 +101,7 @@ class Transform
      */
     protected function addRule($ruleName, $arguments)
     {
-        $ruleClass = "Inet\Transformation\Rule\\" . $ruleName;
+        $ruleClass = "Inet\Transformation\Rule\\".$ruleName;
         if (!class_exists($ruleClass)) {
             throw new InvalidRuleException("The rule '$ruleName' does not exist");
         }

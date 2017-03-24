@@ -45,7 +45,7 @@ class Callback extends AbstractRule
         unset($arguments[0]);
         // Functions is callable ?
         if (!is_callable($callable)) {
-            throw new TransformationException($callable . ' is not callable');
+            throw new TransformationException($callable.' is not callable');
         }
 
         // Transform it by calling the method and sending arguments

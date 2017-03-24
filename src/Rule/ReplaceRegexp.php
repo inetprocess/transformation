@@ -58,7 +58,7 @@ class ReplaceRegexp extends AbstractRule
         if (is_null($output)) {
             $pregErr = preg_last_error();
             $pregMsg = array_key_exists($pregErr, $this->pregErrs) ? $this->pregErrs[$pregErr] : 'Unknown error';
-            $msg = 'ReplaceRegexp was not able to transform your string: ' . $pregMsg;
+            $msg = 'ReplaceRegexp was not able to transform your string: '.$pregMsg;
             throw new TransformationException($msg);
         }
 

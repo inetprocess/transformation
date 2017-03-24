@@ -49,7 +49,7 @@ class NormalizeURL extends AbstractRule
         $pattern = '|^(?!'.$protocol.')(.+)$|';
         preg_match($pattern, $input, $matches);
         if (!empty($matches)) {
-            $input = $protocol . '://' . $input;
+            $input = $protocol.'://'.$input;
         }
 
         return $input;

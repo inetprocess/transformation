@@ -47,7 +47,7 @@ class Slugify extends AbstractRule
             $output = $slugify->slugify($input);
         } catch (\Exception $e) {
             throw new NotTransformableException(
-                'Rule Slugify: Unable to transform input (' . var_export($input, true) . ')'
+                'Rule Slugify: Unable to transform input ('.var_export($input, true).')'
             );
         }
 

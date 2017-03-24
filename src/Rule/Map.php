@@ -26,13 +26,15 @@ class Map extends AbstractRule
     protected $mapping = array();
     /**
      * Operate the transformation
+     * If input is an array each cell is replaced independently
+     * and an array is returned
      *
-     * @param string $input
+     * @param mixed $input
      * @param array  $arguments
      *
      * @throws Inet\Transformation\Exception\TransformationException
      *
-     * @return string
+     * @return mixed
      */
     public function transform($input, $arguments)
     {
@@ -51,15 +53,15 @@ class Map extends AbstractRule
         $this->mapping = $mapping;
 
         if (!is_array($input)) {
-            return $this->map($input);
+            return $this->replace($input);
         }
-        // More complex version if input is an array
-        // Map each cell independently
-        // And return an array
-        return array_map(array($this, 'map'), $input);
+        return array_map(array($this, 'replace'), $input);
     }
 
-    public function map($value)
+    /**
+     * @param string $value
+     */
+    public function replace($value)
     {
         // If not array map and return fast
         if (array_key_exists($value, $this->mapping)) {

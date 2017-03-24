@@ -1,2 +1,5 @@
+.*.sw*
+.swp
+/reports/
 phpunit.xml
 vendor

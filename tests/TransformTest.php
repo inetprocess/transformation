@@ -29,4 +29,14 @@ class TransformTest extends \PHPUnit_Framework_TestCase
     {
         T::getFactory();
     }
+
+    /**
+     * @expectedException Inet\Transformation\Exception\InvalidRuleException
+     * @expectedExceptionMessage The rule 'InvalidRuleClass' must implement AbstractRule
+     */
+    public function testInvalidRuleImplementation()
+    {
+        require_once (__DIR__ . '/InvalidRuleClass.php');
+        T::InvalidRuleClass();
+    }
 }

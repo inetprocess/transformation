@@ -32,6 +32,15 @@ class RuleImplodeTest extends \PHPUnit_Framework_TestCase
         T::Implode('|')->transform(null);
     }
 
+    /**
+     * @expectedException Inet\Transformation\Exception\NotTransformableException
+     * @expectedExceptionMessage Rule Implode can transform an array. string found in input
+     */
+    public function testImplodeString()
+    {
+        T::Implode('|')->transform('test');
+    }
+
     public function testImplodeRightParameters()
     {
         $input = array('ab', 'ab', 'ab', 'ab', 'ab', 'ab');

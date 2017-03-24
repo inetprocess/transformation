@@ -23,6 +23,15 @@ class RuleSlugifyTest extends \PHPUnit_Framework_TestCase
         T::Slugify()->transform(new \StdClass);
     }
 
+    /**
+     * @expectedException Inet\Transformation\Exception\NotTransformableException
+     * @expectedExceptionMessage Rule Slugify: Unable to transform input (Array)
+     */
+    public function testSlugifyArray()
+    {
+        T::Slugify()->transform(array('foo', 'bar'));
+    }
+
     public function testSlugifyRightParameters()
     {
         $output = T::Slugify()->transform('Bonjour tôôut le monde !');

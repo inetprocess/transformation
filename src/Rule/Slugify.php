@@ -17,6 +17,7 @@
 namespace Inet\Transformation\Rule;
 
 use Cocur\Slugify\Slugify as CocurSlugify;
+use Inet\Transformation\Exception\NotTransformableException;
 use Inet\Transformation\Exception\TransformationException;
 
 /**
@@ -45,7 +46,7 @@ class Slugify extends AbstractRule
             $slugify = new CocurSlugify();
             $output = $slugify->slugify($input);
         } catch (\Exception $e) {
-            throw new TransformationException("Input ($input) seems not valid");
+            throw new NotTransformableException("Rule Slugify: Unable to transform input ($input)");
         }
 
         return $output;

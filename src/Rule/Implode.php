@@ -16,6 +16,7 @@
 
 namespace Inet\Transformation\Rule;
 
+use Inet\Transformation\Exception\NotTransformableException;
 use Inet\Transformation\Exception\TransformationException;
 
 /**
@@ -41,7 +42,8 @@ class Implode extends AbstractRule
         }
 
         if (!is_array($input)) {
-            throw new TransformationException('Rule Implode can explode only an array');
+            throw new NotTransformableException('Rule Implode can transform an array. '
+                . gettype($input) . ' found in input');
         }
 
         // Transform it

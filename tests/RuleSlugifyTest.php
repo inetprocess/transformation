@@ -25,7 +25,7 @@ class RuleSlugifyTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException Inet\Transformation\Exception\NotTransformableException
-     * @expectedExceptionMessage Rule Slugify: Unable to transform input (Array)
+     * @expectedExceptionMessageRegExp /Rule Slugify: Unable to transform input (.*)/
      */
     public function testSlugifyArray()
     {

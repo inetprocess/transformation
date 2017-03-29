@@ -47,7 +47,7 @@ class Map extends AbstractRule
         $mapping = $arguments[0];
         if (!is_array($mapping)) {
             throw new TransformationException(
-                'First argument of Map should by an assosiative array'
+                'First argument of Map should be an assosiative array'
             );
         }
         $this->mapping = $mapping;

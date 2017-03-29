@@ -25,7 +25,7 @@ class RuleMapTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException Inet\Transformation\Exception\TransformationException
-     * @expectedExceptionMessage First argument of Map should by an assosiative array
+     * @expectedExceptionMessage First argument of Map should be an assosiative array
      */
     public function testNotArrayMapping()
     {

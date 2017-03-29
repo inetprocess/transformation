@@ -44,7 +44,7 @@ class SugarCRMMapMultiEnum extends AbstractRule
         $mapping = $arguments[0];
         if (!is_array($mapping)) {
             throw new TransformationException(
-                'First argument of SugarCRMMapMultiEnum should by an assosiative array'
+                'First argument of SugarCRMMapMultiEnum should be an assosiative array'
             );
         }
         // Merge options with defaults
@@ -56,7 +56,7 @@ class SugarCRMMapMultiEnum extends AbstractRule
             $opts = $arguments[1];
             if (!is_array($opts)) {
                 throw new TransformationException(
-                    'Optionnal second argument of SugarCRMMapMultiEnum should by an associative array'
+                    'Optionnal second argument of SugarCRMMapMultiEnum should be an associative array'
                 );
             }
             foreach ($options as $key => $value) {

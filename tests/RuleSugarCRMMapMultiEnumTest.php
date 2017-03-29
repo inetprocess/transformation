@@ -25,7 +25,7 @@ class RuleSugarCRMMapMultiEnumTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException Inet\Transformation\Exception\TransformationException
-     * @expectedExceptionMessage First argument of SugarCRMMapMultiEnum should by an assosiative array
+     * @expectedExceptionMessage First argument of SugarCRMMapMultiEnum should be an assosiative array
      */
     public function testNotArrayMapping()
     {
@@ -34,7 +34,7 @@ class RuleSugarCRMMapMultiEnumTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @expectedException Inet\Transformation\Exception\TransformationException
-     * @expectedExceptionMessage Optionnal second argument of SugarCRMMapMultiEnum should by an associative array
+     * @expectedExceptionMessage Optionnal second argument of SugarCRMMapMultiEnum should be an associative array
      */
     public function testNotArrayOptions()
     {

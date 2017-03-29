@@ -111,6 +111,14 @@ Uses [Cocur\Slugify](https://github.com/cocur/slugify) to Slugify a string.
 T::Slugify()->transform('Bonjour tôôut le monde !'); // bonjour-toout-le-monde
 ```
 
+## SetType()
+Uses settype from PHP for type casting.
+```php
+T::SetType('bool')->transform('1'); // true
+T::SetType('bool')->transform('0'); // false
+T::SetType('bool')->transform(array()); // false
+```
+
 ## SugarCRMMapMultiEnum(array $mapping, [array $options])
 Map multiple values from a string or an array
 and return a string encoded for database storage of SugarCRM multi enum field.

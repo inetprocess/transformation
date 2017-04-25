@@ -62,6 +62,19 @@ T::Explode(',')->transform('foo,bar,baz'); // array('foo', 'bar', 'baz');
 T::Explode(',')->Implode('|')->transform('foo,bar,baz'); // foo|bar|baz
 ```
 
+## Htmlspecialchars([array $flags, string $encoding, bool $double_encoding])
+Encode special chars. Uses `htmlspecialchars` function from PHP.
+```php
+T::Htmlspecialchars(['ENT_QUOTES'])->transform("l'arbre"); // l&#039;arbre
+T::Htmlspecialchars(['ENT_QUOTES'], 'UTF-8', false)->transform("l&#039;arbre"); // l&#039;arbre
+```
+
+## HtmlspecialcharsDecode([array $flags])
+Decode special chars. Uses `htmlspecialchars_decode` function from PHP.
+```php
+T::HtmlspecialcharsDecode(['ENT_QUOTES'])->transform("l&#039;arbre"); // l'arbre
+```
+
 ## Implode(string $delimiter)
 Join an array elements to a string. Uses `implode` function from PHP.
 ```php

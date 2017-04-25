@@ -23,7 +23,7 @@ use Inet\Transformation\Exception\TransformationException;
  */
 class Htmlspecialchars extends AbstractRule
 {
-    public function transform($input, $arguments)
+    public function transform($input, array $arguments)
     {
         // I should have two arguments: old format / new format
         if (count($arguments) > 3) {
@@ -31,11 +31,6 @@ class Htmlspecialchars extends AbstractRule
                 'Rule Htmlspecialchars expects at most 3 arguments'
             );
         }
-        $defaults = array(
-            ENT_COMPAT | ENT_HTML401,
-            ini_get('default_charset'),
-            true
-        );
         if (isset($arguments[0])) {
             $flags_array = $arguments[0];
             $arguments[0] = 0;
@@ -53,8 +48,6 @@ class Htmlspecialchars extends AbstractRule
                 $arguments[0] |= constant($constant);
             }
         }
-
-        $options = $arguments + $defaults;
-        return htmlspecialchars($input, $options[0], $options[1], $options[2]);
+        return call_user_func_array('htmlspecialchars', array_merge(array($input), $arguments));
     }
 }

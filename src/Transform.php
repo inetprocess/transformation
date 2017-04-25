@@ -99,7 +99,7 @@ class Transform
      *
      * @return void
      */
-    protected function addRule($ruleName, $arguments)
+    protected function addRule($ruleName, array $arguments)
     {
         $ruleClass = "Inet\Transformation\Rule\\".$ruleName;
         if (!class_exists($ruleClass)) {
@@ -125,7 +125,7 @@ class Transform
      *
      * @return Transform
      */
-    public static function __callStatic($ruleName, $arguments)
+    public static function __callStatic($ruleName, array $arguments)
     {
         $transform = self::getFactory();
         $transform->cleanRules();
@@ -141,7 +141,7 @@ class Transform
      *
      * @return Transform
      */
-    public function __call($ruleName, $arguments)
+    public function __call($ruleName, array $arguments)
     {
         $this->addRule($ruleName, $arguments);
 

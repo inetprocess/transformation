@@ -46,7 +46,7 @@ class ReplaceRegexp extends AbstractRule
      *
      * @return string
      */
-    public function transform($input, $arguments)
+    public function transform($input, array $arguments)
     {
         // I should have two arguments: old format / new format
         if (count($arguments) !== 2) {

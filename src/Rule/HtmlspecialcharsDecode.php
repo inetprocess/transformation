@@ -23,7 +23,7 @@ use Inet\Transformation\Exception\TransformationException;
  */
 class HtmlspecialcharsDecode extends AbstractRule
 {
-    public function transform($input, $arguments)
+    public function transform($input, array $arguments)
     {
         // I should have two arguments: old format / new format
         if (count($arguments) > 1) {
@@ -31,10 +31,9 @@ class HtmlspecialcharsDecode extends AbstractRule
                 'Rule HtmlspecialcharsDecode expects at most 1 argument'
             );
         }
-        $flags = ENT_COMPAT | ENT_HTML401;
         if (isset($arguments[0])) {
             $flags_array = $arguments[0];
-            $flags = 0;
+            $arguments[0] = 0;
             if (!is_array($flags_array)) {
                 throw new TransformationException(
                     'First argument of HtmlspecialcharsDecode should be an array'
@@ -46,10 +45,10 @@ class HtmlspecialcharsDecode extends AbstractRule
                         'Flags should be valid PHP constants'
                     );
                 }
-                $flags |= constant($constant);
+                $arguments[0] |= constant($constant);
             }
         }
 
-        return htmlspecialchars_decode($input, $flags);
+        return call_user_func_array('htmlspecialchars_decode', array_merge(array($input), $arguments));
     }
 }

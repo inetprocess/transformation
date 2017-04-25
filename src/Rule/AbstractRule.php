@@ -31,5 +31,5 @@ abstract class AbstractRule
      *
      * @return string|array
      */
-    abstract public function transform($input, $arguments);
+    abstract public function transform($input, array $arguments);
 }

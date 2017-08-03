@@ -24,6 +24,15 @@ class RuleHtmlspecialcharsDecodeTest extends \PHPUnit_Framework_TestCase
         T::HtmlspecialcharsDecode('strtoupper')->transform('test');
     }
 
+    /**
+     * @expectedException Inet\Transformation\Exception\TransformationException
+     * @expectedExceptionMessage Flags should be valid PHP constants
+     */
+    public function testInvalidConstant()
+    {
+        T::HtmlspecialcharsDecode(array('FOO_BAR'))->transform('foo');
+    }
+
     public function validTestProvider()
     {
         return array(

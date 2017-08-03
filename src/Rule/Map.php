@@ -2,14 +2,14 @@
 /**
  * inetprocess/transformation
  *
- * PHP Version 5.3
+ * php version 5.3
  *
- * @author Rémi Sauvat
- * @copyright 2005-2015 iNet Process
+ * @author rémi sauvat
+ * @copyright 2005-2015 inet process
  *
  * @package inetprocess/transformation
  *
- * @license GNU General Public License v2.0
+ * @license gnu general public license v2.0
  *
  * @link http://www.inetprocess.com
  */

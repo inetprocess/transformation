@@ -42,6 +42,11 @@ Call any php function on input. The input will be passed as the last argument of
 T::Callback('sprintf', "REF%'06d")->transform(1234); // REF001234
 ```
 
+## CopyFileToUuid(string $sourceDir, string $destinationDir)
+Copy a file with a filename to a UUID generated name. Return the generated UUID.
+```php
+T::CopyFileToUuid('/var/www/upload/', '/var/www/unified_upload')->transform('quotes/client_01.pdf'); // 123e4567-e89b-12d3-a456-426655440000
+
 ## Concat(string $before, [string $after])
 Append and prepend string to input.
 ```php

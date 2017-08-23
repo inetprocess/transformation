@@ -45,6 +45,6 @@ class RuleMimeTypeTest extends \PHPUnit_Framework_TestCase
     public function testValid()
     {
 
-        $this->assertEquals('text/x-php', T::MimeType()->transform(__FILE__));
+        $this->assertEquals('text/plain', T::MimeType()->transform(__DIR__.'/../README.md'));
     }
 }

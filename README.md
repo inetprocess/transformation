@@ -101,6 +101,14 @@ T::Map($mapping)->transform(array('10', '1')); // array('key10', 'key1')
 T::Map($mapping)->transform('unknown key'); // unknown key
 ```
 
+## MimeType([string $root])
+Return the MimeType of the file.
+The first optional parameter allow to specify a root directory prepend to the filename
+```php
+T::MimeType()->transform('test.jpg'); // image/jpeg
+T::MimeType('uploads')->transform('logo.png'); // image/png
+```
+
 ## NormalizeURL(string $protocol)
 Prepend a default protocol if not present to any url.
 ```php

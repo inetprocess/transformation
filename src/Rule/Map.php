@@ -55,7 +55,10 @@ class Map extends AbstractRule
         if (!is_array($input)) {
             return $this->replace($input);
         }
-        return array_map(array($this, 'replace'), $input);
+        foreach ($input as $key => $value) {
+            $input[$key] = $this->replace($value);
+        }
+        return $input;
     }
 
     /**

@@ -47,8 +47,9 @@ class HtmlspecialcharsDecode extends AbstractRule
                 }
                 $arguments[0] |= constant($constant);
             }
+        } else {
+            $arguments[0] = ENT_COMPAT | ENT_HTML401;
         }
-
-        return call_user_func_array('htmlspecialchars_decode', array_merge(array($input), $arguments));
+        return htmlspecialchars_decode($input, $arguments[0]);
     }
 }

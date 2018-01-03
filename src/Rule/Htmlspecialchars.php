@@ -48,6 +48,12 @@ class Htmlspecialchars extends AbstractRule
                 $arguments[0] |= constant($constant);
             }
         }
-        return call_user_func_array('htmlspecialchars', array_merge(array($input), $arguments));
+        // Set defaults from php
+        $arguments = array_replace(array(
+            ENT_COMPAT | ENT_HTML401,
+            ini_get('default_charset'),
+            true
+        ), $arguments);
+        return htmlspecialchars($input, $arguments[0], $arguments[1], $arguments[2]);
     }
 }

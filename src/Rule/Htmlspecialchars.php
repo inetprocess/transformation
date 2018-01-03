@@ -50,7 +50,7 @@ class Htmlspecialchars extends AbstractRule
         }
         // Set defaults from php
         $arguments = array_replace(array(
-            ENT_COMPAT | ENT_HTML401,
+            ENT_COMPAT | (defined('ENT_HTML401') ? ENT_HTML401 : 0),
             ini_get('default_charset'),
             true
         ), $arguments);
